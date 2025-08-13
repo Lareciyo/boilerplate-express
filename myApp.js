@@ -19,7 +19,7 @@ message = "Hello json".toUpperCase()
     } else{
         message = "Hello json"
     }
-    res.json({ "message": message  })
+    res.json({ "message": `${message}`  })
 });
 
 app.listen(3000, () => {
