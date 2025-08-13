@@ -9,7 +9,11 @@ app.get('/',  (req, res)=>{
     htmlPath = __dirname +'/views/index.html';
     res.sendFile(htmlPath)
 });
-app.use("/public", express.static(__dirname + "/public"))
+app.use("/public", express.static(__dirname + "/public"));
+
+app.get('/json', (req, res) => {
+    res.json({ message: "Hello json" })
+});
 
 app.listen(3000, () => {
      console.log("Hello World");
