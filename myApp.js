@@ -9,7 +9,7 @@ app.get('/',  (req, res)=>{
     htmlPath = __dirname +'/views/index.html';
     res.sendFile(htmlPath)
 });
-app.use("/public", express.static(_dirname + "/public"))
+app.use("/public", express.static(__dirname + "/public"))
 
 app.listen(3000, () => {
      console.log("Hello World");
