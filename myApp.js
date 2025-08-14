@@ -4,19 +4,17 @@ const path = require('path')
 
 let app = express();
 
-
+app.use("/public", express.static(__dirname + "/public"));
 
 app.get("/json", (req, res) => {
-    let message;
+    let message = "Hello json";
     if (process.env['MESSAGE_STYLE'] === "uppercase") {
         message = "Hello json".toUpperCase();
     }
-    else {
-        message = "Hello json";
-    }
-    res.json({ "message": `${message}` });
+   
+    res.json({ message });
 });
-app.use("/public", express.static(__dirname + "/public"));
+
 
 
 
