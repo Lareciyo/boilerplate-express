@@ -4,6 +4,11 @@ const path = require('path')
 let app = express();
 app.use("/public", express.static(__dirname + "/public"));
 
+app._router((req, res, next) =>{
+  let string = req.method + "" + req.path + "-" + req.ip;
+  console.log(string)
+  next()
+})
 
 app.get("/json", (req, res) => {
   let message;
