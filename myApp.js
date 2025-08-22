@@ -56,5 +56,16 @@ app.listen(3000, () => {
      console.log("Server is listening on port 3000");
 })
 
+app.route('/name').get((req, res)=>{
+  const first = req.query.girst;
+  const last = req.query.last;
+  res.json({ name: first + " " + last })
+})
+.post((req, res)=>{
+  const first = req.body.first;
+  const last = req.body.last;
+  res.json({ name: first + " " + last })
+})
+
 
  module.exports = app;
