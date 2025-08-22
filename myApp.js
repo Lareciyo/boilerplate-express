@@ -33,7 +33,10 @@ app.get('/now',
   }
 )
 
-
+app.get('/:word/echo', (req, res)=>{
+  const word = req.params.word;
+  res.json({ echo: word})
+})
 
 
 app.listen(3000, () => {
