@@ -5,16 +5,15 @@ let app = express();
 app.use("/public", express.static(__dirname + "/public"));
 
 app.use((req, res, next) =>{
-  let string = req.method + "" + req.path + "-" + req.ip;
-  console.log(string)
+ console.log(req.method + "" + req.path + "-" + req.ip);
+  // console.log(string)
   next()
 })
 
 app.get("/json", (req, res) => {
   let message;
   const style = process.env['MESSAGE_STYLE'];
-  console.log('MESSAGE_STYLE:', style); // debug
-  if (style === "uppercase") {
+   if (style === "uppercase") {
     message = "Hello json".toUpperCase();
   } else {
     message = "Hello json";
