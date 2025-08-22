@@ -1,4 +1,5 @@
 require('dotenv').config()
+
 let express = require('express');
 const path = require('path')
 
@@ -22,7 +23,7 @@ console.log('MESSAGE_STYLE:', messageStyle);
 
 
 app.listen(3000, () => {
-     console.log("Hello World");
+     console.log("Server is listening on port 3000");
 })
 
 
